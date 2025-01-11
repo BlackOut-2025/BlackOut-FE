@@ -146,3 +146,15 @@ export const z10 = style([
     zIndex: 10,
   },
 ])
+
+export const hideScrollBar = style([
+  {
+    msOverflowStyle: 'none',
+    scrollbarWidth: 'none',
+    selectors: {
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+    },
+  },
+])
