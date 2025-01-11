@@ -10,11 +10,16 @@ declare module '@stackflow/config' {
 }
 
 const TicketDetailPage: ActivityComponentType<'TicketDetailPage'> = () => {
-  const { push } = useFlow()
+  const { push, pop } = useFlow()
   return (
     <BaseAppScreen showBorder appBar={{ title: '티켓 상세' }}>
       <div>TicketDetailPage</div>
-      <Button onClick={() => push('ProfileDetailPage', { userId: '123' }, { animate: false })}>
+      <Button
+        onClick={() => {
+          push('ProfileDetailPage', { userId: '123' }, { animate: false })
+          pop()
+        }}
+      >
         ProfileDetailPage
       </Button>
     </BaseAppScreen>
