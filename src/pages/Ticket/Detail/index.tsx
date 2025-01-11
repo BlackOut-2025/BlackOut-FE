@@ -14,7 +14,9 @@ const TicketDetailPage: ActivityComponentType<'TicketDetailPage'> = () => {
   return (
     <BaseAppScreen showBorder appBar={{ title: '티켓 상세' }}>
       <div>TicketDetailPage</div>
-      <Button onClick={() => push('ProfileDetailPage', { userId: '123' })}>ProfileDetailPage</Button>
+      <Button onClick={() => (window.location.href = `https://black-out-fe.vercel.app/profile/123/detail/`)}>
+        ProfileDetailPage
+      </Button>
     </BaseAppScreen>
   )
 }
