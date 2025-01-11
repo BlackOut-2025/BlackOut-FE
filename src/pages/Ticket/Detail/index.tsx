@@ -1,5 +1,5 @@
 import { Button } from '@mantine/core'
-import { ActivityComponentType, useFlow } from '@stackflow/react/future'
+import { ActivityComponentType } from '@stackflow/react/future'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
 
@@ -10,7 +10,7 @@ declare module '@stackflow/config' {
 }
 
 const TicketDetailPage: ActivityComponentType<'TicketDetailPage'> = () => {
-  const { push } = useFlow()
+  //   const { push } = useFlow()
   return (
     <BaseAppScreen showBorder appBar={{ title: '티켓 상세' }}>
       <div>TicketDetailPage</div>
