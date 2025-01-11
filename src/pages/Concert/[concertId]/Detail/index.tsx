@@ -16,7 +16,7 @@ const ConcertDetailPage: ActivityComponentType<'ConcertDetailPage'> = () => {
 
   return (
     <BaseAppScreen>
-      <img src={concertData.imgUrl} alt={`${concertData.title} 포스터`} className={style({ width: 335 })} />
+      <img src={concertData.imgUrl} alt={`${concertData.title} 포스터`} style={{ width: 335 }} />
     </BaseAppScreen>
   )
 }
