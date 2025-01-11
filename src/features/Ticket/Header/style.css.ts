@@ -8,6 +8,9 @@ export const Container = style({
   flexDirection: 'column',
   gap: 23,
   padding: '0 1.875rem',
+  paddingBottom: 16,
+  width: '100vw',
+  background: vars.colors.white,
 })
 
 export const TitleWrapper = style([f.flex, f.wFull, f.justifyBetween, { color: vars.colors.BG[0] }])
