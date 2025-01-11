@@ -17,10 +17,9 @@ const HomePage: ActivityComponentType<'HomePage'> = () => {
   return (
     <BaseAppScreen>
       <Suspense fallback={<Loader />}>
-        {/* <HomeBanner />
+        <HomeBanner />
         <HomeCategory />
-        <HomeTicketList /> */}
-        <Login />
+        <HomeTicketList />
       </Suspense>
     </BaseAppScreen>
   )
