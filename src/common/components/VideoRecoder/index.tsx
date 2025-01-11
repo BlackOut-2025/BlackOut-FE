@@ -42,9 +42,9 @@ const VideoRecorder = ({ sessionId }: Props) => {
 
     const response = await axios.post(import.meta.env.VITE_API_LAMBDA_URL, {
       SessionId: sessionId,
-      VideoWidth: videoRef.current?.videoWidth,
-      VideoHeight: videoRef.current?.videoHeight,
-      Chunk: base64data, // 비디오 파일 Blob 데이터를 Base64 인코딩한 스트링으로 보내주세요. 데이터는 10메가 이하여야 합니다
+      VideoWidth: `${videoRef.current?.videoWidth}`,
+      VideoHeight: `${videoRef.current?.videoHeight}`,
+      Chunk: base64data,
     })
 
     console.log(response.data)
