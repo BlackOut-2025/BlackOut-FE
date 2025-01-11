@@ -6,7 +6,6 @@ import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
 import HomeBanner from '@/features/Home/Banner'
 import HomeCategory from '@/features/Home/Category'
 import HomeTicketList from '@/features/Home/TicketList'
-import Login from '@/features/Login'
 
 declare module '@stackflow/config' {
   interface Register {

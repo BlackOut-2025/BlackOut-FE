@@ -1,4 +1,3 @@
-import { FaceLivenessDetector } from '@aws-amplify/ui-react-liveness'
 import { Loader } from '@mantine/core'
 import { Suspense } from 'react'
 
@@ -9,10 +8,6 @@ import { useGetSession } from '@/domain/Login/api/useGetSession'
 
 const Login = () => {
   const { data: sessionId } = useGetSession()
-
-  const handleAnalysisComplete = async () => {
-    console.log('얼굴 인식 완료!', sessionId)
-  }
 
   return (
     <Suspense fallback={<Loader />}>
