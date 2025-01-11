@@ -2,9 +2,11 @@ import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle'
 import { theme } from './theme'
-import { Welcome } from './Welcome/Welcome'
+
+import { Stackflow } from '@/stackflow/stack'
+
+import '@stackflow/plugin-basic-ui/index.css'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,8 +24,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider theme={theme}>
-        <Welcome />
-        <ColorSchemeToggle />
+        <Stackflow initialContext={{ theme: 'cupertino' }} />
       </MantineProvider>
     </QueryClientProvider>
   )
