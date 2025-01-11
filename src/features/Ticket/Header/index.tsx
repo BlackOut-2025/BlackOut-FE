@@ -15,13 +15,26 @@ const Header = () => {
         </Text>
         <IconBell size={24} color={vars.colors.dark[0]} />
       </div>
-      <div className={s.SelectorContainer}>
-        <Button variant="outline" color="gray" radius="xl" size="xs">
-          <IconAdjustmentsHorizontal />
-          <span>6개월</span>
-        </Button>
-        <div>
-          <LayoutIcon />
+      <div className={s.Wrapper}>
+        <div className={s.CategoryWrapper}>
+          <Button size="xs" radius="xl" color="dark.7">
+            전체
+          </Button>
+          <Button size="xs" radius="xl" color="gray.2">
+            사용가능
+          </Button>
+          <Button size="xs" radius="xl" color="gray.2">
+            사용완료
+          </Button>
+        </div>
+        <div className={s.SelectorContainer}>
+          <Button variant="outline" color="gray" radius="xl" size="xs">
+            <IconAdjustmentsHorizontal />
+            <span>6개월</span>
+          </Button>
+          <div>
+            <LayoutIcon />
+          </div>
         </div>
       </div>
     </div>

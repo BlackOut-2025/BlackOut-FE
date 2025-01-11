@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
 import Header from '@/features/Ticket/Header'
+import TicketList from '@/features/Ticket/TicketList'
 
 declare module '@stackflow/config' {
   interface Register {
@@ -15,6 +16,7 @@ const MyTicketPage: ActivityComponentType<'MyTicketPage'> = () => {
     <BaseAppScreen>
       <Suspense fallback={<Loader />}>
         <Header />
+        <TicketList />
       </Suspense>
     </BaseAppScreen>
   )
