@@ -12,7 +12,7 @@ export const routes: Routes = {
     path: '/concert/:concertId/detail',
   },
   MyTicketPage: {
-    path: '/my-ticket/detail',
+    path: '/my-ticket',
   },
   MyTicketDetailPage: {
     path: '/my-ticket/:ticketId/detail',
