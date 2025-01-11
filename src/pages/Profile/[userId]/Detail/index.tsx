@@ -1,5 +1,4 @@
-import { useActivityParams } from '@stackflow/react'
-import { ActivityComponentType } from '@stackflow/react/future'
+import { ActivityComponentType, useActivityParams } from '@stackflow/react/future'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
 import { PATH_PARAMS } from '@/pages/types'
@@ -11,10 +10,11 @@ declare module '@stackflow/config' {
 }
 
 const ProfileDetailPage: ActivityComponentType<'ProfileDetailPage'> = () => {
-  const userId = useActivityParams<'ProfileDetailPage'>()
+  const { userId } = useActivityParams<'ProfileDetailPage'>()
+  console.log('🚀 ~ userId:', userId)
   return (
     <BaseAppScreen showBorder appBar={{ title: '프로필 상세' }}>
-      <div>ProfileDetailPage: {userId}</div>
+      <div>ProfileDetailPage</div>
     </BaseAppScreen>
   )
 }
