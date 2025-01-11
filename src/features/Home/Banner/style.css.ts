@@ -62,7 +62,12 @@ export const ControlButton = style([
   f.flex,
   f.justifyCenter,
   f.alignCenter,
-  { width: '2.5rem', height: '2.5rem', borderRadius: '50%', background: vars.colors.BG[9] },
+  {
+    width: '2.5rem',
+    height: '2.5rem',
+    borderRadius: '50%',
+    background: 'rgba(255, 255, 255, 0.30)',
+  },
 ])
 export const Content = style([f.flex, f.wFull, f.alignStart, { gap: '0.75rem' }])
 
