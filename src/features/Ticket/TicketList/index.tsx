@@ -19,6 +19,13 @@ const TicketList = () => {
         endDate={new Date(2025, 8, 1)}
         location="화정체육관"
       />
+      <TicketCard
+        title="하승준 콘서트"
+        available={false}
+        startDate={new Date(2025, 5, 1)}
+        endDate={new Date(2025, 8, 1)}
+        location="화정체육관"
+      />
     </div>
   )
 }

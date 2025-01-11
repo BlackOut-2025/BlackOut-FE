@@ -5,7 +5,6 @@ export const TicketListWrapper = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  marginTop: 14,
-  overflowY: 'scroll',
   gap: 20,
+  marginTop: 160,
 })

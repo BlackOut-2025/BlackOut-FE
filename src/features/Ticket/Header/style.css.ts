@@ -11,6 +11,9 @@ export const Container = style({
   paddingBottom: 16,
   width: '100vw',
   background: vars.colors.white,
+  position: 'fixed',
+  top:43,
+  zIndex: 10,
 })
 
 export const TitleWrapper = style([f.flex, f.wFull, f.justifyBetween, { color: vars.colors.BG[0] }])

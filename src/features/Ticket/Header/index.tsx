@@ -1,5 +1,6 @@
 import { Button, Text } from '@mantine/core'
 import { IconAdjustmentsHorizontal, IconBell } from '@tabler/icons-react'
+import { createPortal } from 'react-dom'
 
 import * as s from './style.css'
 
@@ -7,7 +8,7 @@ import LayoutIcon from '@/common/assets/LayoutIcon'
 import { vars } from '@/theme'
 
 const Header = () => {
-  return (
+  return createPortal(
     <div className={s.Container}>
       <div className={s.TitleWrapper}>
         <Text size="xl" fw={700} c="dark">
@@ -37,7 +38,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
 
