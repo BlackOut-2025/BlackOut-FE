@@ -15,7 +15,7 @@ const TicketCard = ({ title, location, available, startDate, endDate }: Props) =
     <div className={s.CardContainer} style={{ backgroundImage: `url(${TicketBG})` }}>
       <div className={s.UpperSection}>
         <div className={s.CardHeader}></div>
-        <div>
+        <div className={s.TextSmall}>
           {startDate.getFullYear()}.{startDate.getMonth() + 1}.{startDate.getDate()} - {endDate.getFullYear()}.
           {endDate.getMonth() + 1}.{endDate.getDate()}
         </div>

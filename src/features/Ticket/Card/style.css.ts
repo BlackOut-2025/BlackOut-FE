@@ -27,3 +27,9 @@ export const CardHeader = style({
   flexDirection: 'column',
   gap: 6,
 })
+
+export const TextSmall = style({
+  fontSize: 14,
+  fontWeight: 600,
+  lineHeight: 1.4,
+})
