@@ -12,10 +12,10 @@ export const routes: Routes = {
     path: '/concert/:concertId/detail',
   },
   MyTicketPage: {
-    path: '/my-ticket/:userId/detail',
+    path: '/my-ticket/detail',
   },
   MyTicketDetailPage: {
-    path: '/my-ticket/:userId/ticket/:ticketId/detail',
+    path: '/my-ticket/:ticketId/detail',
   },
 }
 
