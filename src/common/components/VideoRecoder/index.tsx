@@ -95,7 +95,11 @@ const VideoRecorder = ({ sessionId }: Props) => {
     getMediaPermission()
   }, [])
 
-  return <video className={s.VideoBoxStyle} ref={videoRef} autoPlay />
+  return (
+    <div className={s.VideoWrapper}>
+      <video className={s.VideoStyle} ref={videoRef} autoPlay />
+    </div>
+  )
 }
 
 export default VideoRecorder
