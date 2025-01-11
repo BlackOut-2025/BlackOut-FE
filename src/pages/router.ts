@@ -5,11 +5,17 @@ export type ActivityNames = keyof typeof pages
 type Routes = Record<ActivityNames, { path: string }>
 
 export const routes: Routes = {
-  TicketDetailPage: {
-    path: '/ticket/detail',
+  HomePage: {
+    path: '/',
   },
-  ProfileDetailPage: {
-    path: '/profile/:userId/detail',
+  ConcertDetailPage: {
+    path: '/concert/:concertId/detail',
+  },
+  MyTicketPage: {
+    path: '/my-ticket/:userId/detail',
+  },
+  MyTicketDetailPage: {
+    path: '/my-ticket/:userId/ticket/:ticketId/detail',
   },
 }
 

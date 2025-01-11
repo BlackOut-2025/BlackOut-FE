@@ -10,6 +10,8 @@ export type BaseAppScreenProps = AppScreenProps &
   Partial<Pick<Parameters<typeof ErrorBoundary>[0], 'renderFallback'>> &
   CloseButtonCycle & {
     showBorder?: boolean
+    showCloseButton?: boolean
+    showBackButton?: boolean
   }
 
 export const BaseAppScreen = ({
@@ -18,6 +20,8 @@ export const BaseAppScreen = ({
   children,
   appBar,
   showBorder = false,
+  showCloseButton = false,
+  showBackButton = false,
   renderFallback = () => <></>,
   ...appScreenProps
 }: BaseAppScreenProps) => {
@@ -39,8 +43,8 @@ export const BaseAppScreen = ({
         borderColor: vars.colors.dark[1],
         iconColor: vars.colors.black[6],
         textColor: vars.colors.black[6],
-        closeButton: renderAppBarLeft('close'),
-        backButton: renderAppBarLeft('back'),
+        closeButton: showCloseButton ? renderAppBarLeft('close') : undefined,
+        backButton: showBackButton ? renderAppBarLeft('back') : undefined,
         ...appBar,
         renderRight: () => <div className={s.RightWrapper}>{appBar?.renderRight?.()}</div>,
       }}
