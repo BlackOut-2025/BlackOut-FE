@@ -1,7 +1,9 @@
+import { Loader } from '@mantine/core'
 import { ActivityComponentType } from '@stackflow/react/future'
+import { Suspense } from 'react'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
-import Selector from '@/features/Ticket/Selector'
+import Header from '@/features/Ticket/Header'
 
 declare module '@stackflow/config' {
   interface Register {
@@ -11,7 +13,9 @@ declare module '@stackflow/config' {
 const MyTicketPage: ActivityComponentType<'MyTicketPage'> = () => {
   return (
     <BaseAppScreen>
-      <Selector />
+      <Suspense fallback={<Loader />}>
+        <Header />
+      </Suspense>
     </BaseAppScreen>
   )
 }
