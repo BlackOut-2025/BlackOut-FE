@@ -1,6 +1,11 @@
+import { Loader } from '@mantine/core'
 import { ActivityComponentType } from '@stackflow/react/future'
+import { Suspense } from 'react'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
+import HomeBanner from '@/features/Home/Banner'
+import HomeCategory from '@/features/Home/Category'
+import HomeTicketList from '@/features/Home/TicketList'
 
 declare module '@stackflow/config' {
   interface Register {
@@ -10,7 +15,11 @@ declare module '@stackflow/config' {
 const HomePage: ActivityComponentType<'HomePage'> = () => {
   return (
     <BaseAppScreen>
-      <div>HomePage</div>
+      <Suspense fallback={<Loader />}>
+        <HomeBanner />
+        <HomeCategory />
+        <HomeTicketList />
+      </Suspense>
     </BaseAppScreen>
   )
 }
