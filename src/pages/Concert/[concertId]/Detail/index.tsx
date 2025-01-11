@@ -1,6 +1,8 @@
 import { ActivityComponentType, useActivityParams } from '@stackflow/react/future'
+import { style } from '@vanilla-extract/css'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
+import { useGetConcertDetail } from '@/domain/Concert/apis/useGetConcertDetail'
 import { PATH_PARAMS } from '@/pages/types'
 
 declare module '@stackflow/config' {
@@ -10,9 +12,11 @@ declare module '@stackflow/config' {
 }
 const ConcertDetailPage: ActivityComponentType<'ConcertDetailPage'> = () => {
   const { concertId } = useActivityParams<'ConcertDetailPage'>()
+  const { data: concertData } = useGetConcertDetail({ concertId })
+
   return (
     <BaseAppScreen>
-      <div>ConcertDetailPage: {concertId}</div>
+      <img src={concertData.imgUrl} alt={`${concertData.title} 포스터`} className={style({ width: 335 })} />
     </BaseAppScreen>
   )
 }
