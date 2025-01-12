@@ -1,4 +1,3 @@
-import { Button } from '@mantine/core'
 import { useFlow } from '@stackflow/react/future'
 
 import * as s from './style.css'
@@ -20,13 +19,6 @@ const TicketCard = ({}: Props) => {
     push('MyTicketDetailPage', { ticketId: 'title' })
   }
 
-  return (
-    <Button
-      variant="transparent"
-      className={s.CardContainer}
-      onClick={onClick}
-      style={{ backgroundImage: `url(${TicketBG})` }}
-    ></Button>
-  )
+  return <img className={s.CardContainer} onClick={onClick} src={TicketBG} />
 }
 export default TicketCard
