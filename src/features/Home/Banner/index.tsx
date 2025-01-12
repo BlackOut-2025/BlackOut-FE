@@ -8,9 +8,35 @@ import { useCallback, useEffect, useState } from 'react'
 import * as s from './style.css'
 
 import BannerImage from '@/common/assets/JHope.png'
+import BlackSkirtsImage from '@/common/assets/BlackSkirts.png'
+import JannabiImage from '@/common/assets/Jannabi.png'
+import SynthesizeImage from '@/common/assets/Synthesize.png'
+import IUImage from '@/common/assets/IU.png'
 import { usePrevNextButtons } from '@/features/Home/hooks/carousel-button'
 import { vars } from '@/theme'
 
+const Banners = [
+  {
+    image: BannerImage,
+    title: 'j-hope Tour ‘HOPE ON THE STAGE’ in SEOUL',
+  },
+  {
+    image: JannabiImage,
+    title: '‘JANNABI ON THE STAGE’ in SEOUL',
+  },
+  {
+    image: BlackSkirtsImage,
+    title: '‘BLACK SKIRTS ON THE STAGE’ in SEOUL',
+  },
+  {
+    image: SynthesizeImage,
+    title: '실리카겔 2025 TOUR in SEOUL',
+  },
+  {
+    image: IUImage,
+    title: 'IU 2025 TOUR in SEOUL',
+  },
+]
 const HomeBanner = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' }, [Autoplay()])
 
@@ -35,7 +61,7 @@ const HomeBanner = () => {
     <div
       className={s.Wrapper}
       style={{
-        backgroundImage: `url(${BannerImage})`,
+        backgroundImage: `url(${Banners[currentSlide].image})`,
       }}
     >
       <div className={s.Wrapper} style={{ backgroundColor: 'rgba(0, 0, 0, 0.70)', paddingTop: '1.875rem' }}>
@@ -52,7 +78,7 @@ const HomeBanner = () => {
           <div className={s.CarouselSlide}>
             <div ref={emblaRef} style={{ overflow: 'hidden' }}>
               <div style={{ display: 'flex', backfaceVisibility: 'hidden', alignItems: 'center' }}>
-                {Array.from({ length: 5 }).map((_, index) => (
+                {Banners.map((banner, index) => (
                   <motion.div
                     key={index}
                     className={s.CarouselSlideItem}
@@ -65,7 +91,7 @@ const HomeBanner = () => {
                       ease: 'easeInOut',
                       delay: 0.4,
                     }}
-                    style={{ backgroundImage: `url(${BannerImage})` }}
+                    style={{ backgroundImage: `url(${banner.image})` }}
                   />
                 ))}
               </div>
@@ -79,7 +105,7 @@ const HomeBanner = () => {
             </div>
             <div className={s.Description}>
               <Text c={vars.colors.BG[0]} fw={700} style={{ textAlign: 'center' }}>
-                j-hope Tour ‘HOPE ON THE STAGE’ in SEOUL
+                {Banners[currentSlide].title}
               </Text>
               <Text c="gray.6" size="sm">
                 2025.02.28 - 2025.03.02
