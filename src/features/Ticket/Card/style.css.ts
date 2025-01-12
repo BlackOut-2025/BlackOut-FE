@@ -1,7 +1,5 @@
 import { style } from '@vanilla-extract/css'
 
-import { vars } from '@/theme'
-
 export const CardContainer = style({
   width: '100%',
   margin: 14,

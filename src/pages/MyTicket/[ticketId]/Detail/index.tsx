@@ -12,7 +12,7 @@ declare module '@stackflow/config' {
 }
 
 const MyTicketDetailPage: ActivityComponentType<'MyTicketDetailPage'> = () => {
-  const { ticketId } = useActivityParams<'MyTicketDetailPage'>()
+  const {} = useActivityParams<'MyTicketDetailPage'>()
   return (
     <BaseAppScreen showBackButton showCloseButton appBar={{ title: '티켓 정보' }}>
       <TicketDetails />
