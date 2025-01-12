@@ -67,7 +67,7 @@ const HomeBanner = () => {
       <div className={s.Wrapper} style={{ backgroundColor: 'rgba(0, 0, 0, 0.70)', paddingTop: '1.875rem' }}>
         <div className={s.TitleWrapper}>
           <Text size="lg" fw={700}>
-            BANNER
+            TIFT
           </Text>
           <IconBell size={24} />
         </div>
