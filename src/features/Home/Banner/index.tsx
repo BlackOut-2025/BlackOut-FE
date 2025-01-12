@@ -89,7 +89,7 @@ const HomeBanner = () => {
               <IconChevronRight size={24} color="white" />
             </div>
           </div>
-          <div>hi</div>
+          <div></div>
         </div>
       </div>
     </div>

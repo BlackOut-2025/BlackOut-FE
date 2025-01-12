@@ -8,7 +8,7 @@ export const Wrapper = style([
   f.wFull,
   f.directionColumn,
   f.pRelative,
-  { height: '28.125rem' },
+  { height: 'auto' },
   {
     borderRadius: '0rem 0rem 1.875rem 1.875rem',
     backdropFilter: 'blur(10px)',
