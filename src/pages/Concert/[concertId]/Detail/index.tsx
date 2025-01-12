@@ -1,6 +1,10 @@
 import { ActivityComponentType, useActivityParams } from '@stackflow/react/future'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
+import { useGetConcertDetail } from '@/domain/Concert/apis/useGetConcertDetail'
+import ConcertBanner from '@/features/Concert/ConcertBanner'
+import ConcertInfo from '@/features/Concert/ConcertInfo'
+import ConcertReservationButton from '@/features/Concert/ConcertReservation'
 import { PATH_PARAMS } from '@/pages/types'
 
 declare module '@stackflow/config' {
@@ -10,9 +14,13 @@ declare module '@stackflow/config' {
 }
 const ConcertDetailPage: ActivityComponentType<'ConcertDetailPage'> = () => {
   const { concertId } = useActivityParams<'ConcertDetailPage'>()
+  const { data: concertData } = useGetConcertDetail({ concertId })
+
   return (
-    <BaseAppScreen>
-      <div>ConcertDetailPage: {concertId}</div>
+    <BaseAppScreen showBackButton showCloseButton appBar={{ title: '티켓 예매' }}>
+      <ConcertBanner {...concertData} />
+      <ConcertInfo />
+      <ConcertReservationButton />
     </BaseAppScreen>
   )
 }
