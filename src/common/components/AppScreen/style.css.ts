@@ -5,7 +5,7 @@ import { vars } from '@/theme'
 
 export const RightWrapper = style([f.hFull, f.flex, f.alignCenter, { paddingRight: '0.5rem' }])
 
-export const Wrapper = style([f.wFull, f.hFull])
+export const Wrapper = style([f.wFull, f.hFull, { backgroundColor: vars.colors.BG[0] }])
 
 export const ScreenErrorWrapper = style([f.wFull, f.hFull, f.flex, f.justifyCenter, f.alignCenter])
 

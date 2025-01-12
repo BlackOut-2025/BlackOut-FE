@@ -37,7 +37,7 @@ export const BaseAppScreen = ({
   return (
     <AppScreen
       {...appScreenProps}
-      backgroundColor={vars.colors.body}
+      backgroundColor={vars.colors.BG[0]}
       appBar={{
         borderSize: showBorder ? '0.5px' : '0',
         borderColor: vars.colors.dark[1],
