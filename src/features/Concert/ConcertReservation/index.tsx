@@ -1,9 +1,9 @@
 import { Button } from '@mantine/core'
+import { useFlow } from '@stackflow/react/future'
 
 import * as s from './style.css'
 
 import { vars } from '@/theme'
-import { useFlow } from '@stackflow/react/future'
 
 const ConcertReservationButton = () => {
   const { push, pop } = useFlow()

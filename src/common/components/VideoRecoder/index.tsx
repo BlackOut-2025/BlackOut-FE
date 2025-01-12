@@ -1,35 +1,10 @@
-import axios from 'axios'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import * as s from './style.css'
 
-const videoChunksToBase64 = async (videoChunks: Blob[]): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    try {
-      // 1. Blob 배열 병합
-      const mergedBlob = new Blob(videoChunks, { type: 'video/mp4' })
-
-      // 2. FileReader로 Base64 변환
-      const reader = new FileReader()
-
-      reader.onload = () => {
-        if (reader.result) {
-          resolve(reader.result.toString())
-        } else {
-          reject(new Error('Failed to convert video to Base64'))
-        }
-      }
-
-      reader.onerror = error => {
-        reject(error)
-      }
-
-      reader.readAsDataURL(mergedBlob)
-    } catch (error) {
-      reject(error)
-    }
-  })
-}
+import PersonMask from '@/common/assets/Person.png'
+import { usePostLambda } from '@/common/components/VideoRecoder/apis/usePostLambda'
+import { videoChunksToBase64 } from '@/common/components/VideoRecoder/utils'
 
 interface Props {
   sessionId: string
@@ -37,17 +12,20 @@ interface Props {
 const VideoRecorder = ({ sessionId }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  const { mutate: postVideo } = usePostLambda()
+  const [canClose, setCanClose] = useState(false)
+
   const sendVidio = async (videoChunks: Blob[]) => {
     const base64data = await videoChunksToBase64(videoChunks)
-
-    const response = await axios.post(import.meta.env.VITE_API_LAMBDA_URL, {
-      SessionId: sessionId,
-      VideoWidth: `${videoRef.current?.videoWidth}`,
-      VideoHeight: `${videoRef.current?.videoHeight}`,
-      Chunk: base64data,
-    })
-
-    console.log(response.data)
+    postVideo(
+      { video: videoRef.current!, base64data, sessionId },
+      {
+        onSuccess: data => {
+          console.log(data)
+          setCanClose(true)
+        },
+      },
+    )
   }
 
   const getMediaPermission = useCallback(async () => {
@@ -96,9 +74,14 @@ const VideoRecorder = ({ sessionId }: Props) => {
   }, [])
 
   return (
-    <div className={s.VideoWrapper}>
-      <video className={s.VideoStyle} ref={videoRef} autoPlay />
-    </div>
+    <>
+      {!canClose && (
+        <div className={s.VideoWrapper}>
+          <img src={PersonMask} className={s.Mask} />
+          <video className={s.VideoStyle} ref={videoRef} autoPlay />
+        </div>
+      )}
+    </>
   )
 }
 

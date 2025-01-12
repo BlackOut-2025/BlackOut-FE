@@ -1,7 +1,7 @@
 import { ActivityComponentType } from '@stackflow/react/future'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
-import Login from '@/features/Login'
+import Login from '@/common/components/Login'
 
 declare module '@stackflow/config' {
   interface Register {

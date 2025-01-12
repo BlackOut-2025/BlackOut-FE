@@ -14,15 +14,6 @@ const Login = () => {
       <div className={s.Container}>
         <VideoRecorder sessionId={sessionId} />
       </div>
-      {/* <FaceLivenessDetector
-          sessionId={sessionId}
-          region="us-east-1"
-          onAnalysisComplete={handleAnalysisComplete}
-          onError={error => {
-            console.error(error)
-          }}
-          disableStartScreen
-        /> */}
     </Suspense>
   )
 }
