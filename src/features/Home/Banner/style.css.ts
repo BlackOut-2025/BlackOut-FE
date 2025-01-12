@@ -55,6 +55,7 @@ export const ContentWrapper = style([
   f.wFull,
   f.directionColumn,
   f.alignStart,
+  f.justifyCenter,
   { padding: '0 1.25rem', gap: '1.25rem', marginTop: '0.88rem' },
 ])
 
@@ -69,12 +70,12 @@ export const ControlButton = style([
     background: 'rgba(255, 255, 255, 0.30)',
   },
 ])
-export const Content = style([f.flex, f.wFull, f.alignStart, { gap: '0.75rem' }])
+export const Content = style([f.flex, f.wFull, f.alignStart, f.justifyCenter, { gap: '0.75rem' }])
 
 export const Description = style([
   f.flex,
   f.wFull,
   f.alignCenter,
   f.directionColumn,
-  { gap: '0.25rem', maxWidth: '15rem' },
+  { gap: '0.25rem', maxWidth: '15rem', flex: '1 0 0' },
 ])
