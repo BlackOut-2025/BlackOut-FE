@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css'
 
 import { f } from '@/styles/functions'
-import { vars } from '@/theme'
 
 export const Wrapper = style([
   f.flex,

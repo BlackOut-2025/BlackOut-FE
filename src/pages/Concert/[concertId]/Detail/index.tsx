@@ -1,4 +1,3 @@
-import { Button } from '@mantine/core'
 import { ActivityComponentType, useActivityParams } from '@stackflow/react/future'
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'

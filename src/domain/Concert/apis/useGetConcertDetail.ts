@@ -1,17 +1,17 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 
-import { contract } from '@/common/clients/contract'
+// import { contract } from '@/common/clients/contract'
 import { ConcertInterface } from '@/common/types/concert'
 
 export interface GetConcertDetailRequest {
   concertId: string
 }
 
-interface GetMyTicketsResponse {
-  data: ConcertInterface
-}
+// interface GetMyTicketsResponse {
+//   data: ConcertInterface
+// }
 
-const getConcertDetail: (props: GetConcertDetailRequest) => Promise<ConcertInterface> = async ({ concertId }) => {
+const getConcertDetail: (props: GetConcertDetailRequest) => Promise<ConcertInterface> = async () => {
   // const response = (await contract.getConcertDetail(concertId)) as GetMyTicketsResponse
   // return response.data
   return {
