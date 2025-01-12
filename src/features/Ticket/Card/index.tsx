@@ -1,3 +1,5 @@
+import { useFlow } from '@stackflow/react/future'
+
 import * as s from './style.css'
 
 import TicketBG from '@/common/assets/TicketBG.png'
@@ -11,6 +13,12 @@ interface Props {
   endDate: Date
 }
 const TicketCard = ({}: Props) => {
-  return <div className={s.CardContainer} style={{ backgroundImage: `url(${TicketBG})` }}></div>
+  const { push } = useFlow()
+
+  const onClick = () => {
+    push('MyTicketDetailPage', { ticketId: 'title' })
+  }
+
+  return <img className={s.CardContainer} onClick={onClick} src={TicketBG} />
 }
 export default TicketCard
