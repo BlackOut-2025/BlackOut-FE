@@ -17,6 +17,9 @@ export const routes: Routes = {
   MyTicketDetailPage: {
     path: '/my-ticket/:ticketId/detail',
   },
+  LoginPage: {
+    path: '/login',
+  },
 }
 
 export const pageRoutes = Object.keys(routes).map(activityName => ({
