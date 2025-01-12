@@ -26,7 +26,7 @@ const Banners = [
   },
   {
     image: BlackSkirtsImage,
-    title: '‘BLACK SKIRTS ON THE STAGE’ in SEOUL',
+    title: '2025 검정치마 단독공연 "SONGS TO BRING YOU HOME"',
   },
   {
     image: SynthesizeImage,

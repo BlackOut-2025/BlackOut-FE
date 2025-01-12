@@ -11,7 +11,7 @@ const ConcertInfo = () => {
             <Text size="xs">단독판매</Text>
           </Badge>
           <Text size="lg" fw={700}>
-            2025 검정치마 단독공연 “SONGs to being tou home”
+          2025 검정치마 단독공연 "SONGS TO BRING YOU HOME"
           </Text>
           <div className={s.Box}>
             <div className={s.Place}>

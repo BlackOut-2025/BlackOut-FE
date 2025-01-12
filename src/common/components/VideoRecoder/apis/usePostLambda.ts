@@ -1,12 +1,11 @@
 import { useMutation } from '@tanstack/react-query'
-import axios from 'axios'
 
 interface PostLambdaRequest {
   sessionId: string
   video: HTMLVideoElement
   base64data: string
 }
-const postLambda = async ({ sessionId, video, base64data }: PostLambdaRequest) => {
+const postLambda = async ({}: PostLambdaRequest) => {
   // const response = await axios.post(import.meta.env.VITE_API_LAMBDA_URL, {
   //   SessionId: sessionId,
   //   VideoWidth: `${video.videoWidth}`,

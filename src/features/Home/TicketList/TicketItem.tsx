@@ -1,8 +1,7 @@
 import { Image, Text } from '@mantine/core'
+import { useFlow } from '@stackflow/react/future'
 
 import * as s from './style.css'
-
-import { useFlow } from '@stackflow/react/future'
 
 const TicketItem = ({ image, title }: { image: string; title: string }) => {
   const { push } = useFlow()
