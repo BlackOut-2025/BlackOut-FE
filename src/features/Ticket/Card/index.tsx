@@ -2,7 +2,7 @@ import { useFlow } from '@stackflow/react/future'
 
 import * as s from './style.css'
 
-import TicketBG from '@/common/assets/TicketBG.png'
+import Ticket from '@/common/assets/Ticket.png'
 
 interface Props {
   title: string
@@ -19,6 +19,6 @@ const TicketCard = ({}: Props) => {
     push('MyTicketDetailPage', { ticketId: 'title' })
   }
 
-  return <img className={s.CardContainer} onClick={onClick} src={TicketBG} />
+  return <img className={s.CardContainer} onClick={onClick} src={Ticket} />
 }
 export default TicketCard
