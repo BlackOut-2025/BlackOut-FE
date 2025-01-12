@@ -2,6 +2,7 @@ import { ActivityComponentType, useActivityParams } from '@stackflow/react/futur
 
 import { BaseAppScreen } from '@/common/components/AppScreen/BaseAppScreen'
 import TicketDetails from '@/features/Ticket/Details'
+import EnterButton from '@/features/Ticket/Enter'
 import { PATH_PARAMS } from '@/pages/types'
 
 declare module '@stackflow/config' {
@@ -13,8 +14,9 @@ declare module '@stackflow/config' {
 const MyTicketDetailPage: ActivityComponentType<'MyTicketDetailPage'> = () => {
   const { ticketId } = useActivityParams<'MyTicketDetailPage'>()
   return (
-    <BaseAppScreen showBackButton appBar={{ title: '티켓 정보' }}>
+    <BaseAppScreen showBackButton showCloseButton appBar={{ title: '티켓 정보' }}>
       <TicketDetails />
+      <EnterButton />
     </BaseAppScreen>
   )
 }
